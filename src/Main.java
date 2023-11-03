@@ -19,9 +19,12 @@ public class Main {
         myZoo.nbrCages=25;
         myZoo.animals=new Animal[25];
         //myZoo.displayZoo();
-        System.out.println(myZoo);
-        System.out.println(myZoo.toString());
-        System.out.println(lion);
-        System.out.println(lion.toString());
+        //System.out.println(myZoo);
+        //System.out.println(myZoo.toString());
+        //System.out.println(lion);
+        //System.out.println(lion.toString());
+       // Animal animal=new Animal();
+        System.out.println(myZoo.addAnimal(lion));
+        System.out.println(myZoo.addAnimal(lion));
     }
 }
