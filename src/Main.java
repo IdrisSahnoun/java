@@ -29,5 +29,6 @@ public class Main {
         myZoo.AfficherAnimaux();
         System.out.println(myZoo.searchAnimal(lion));
         System.out.println(myZoo.searchAnimal(cat));
+        System.out.println(myZoo.removeAnimal(cat));
     }
 }

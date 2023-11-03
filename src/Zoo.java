@@ -38,6 +38,19 @@ public class Zoo {
         }
 
     }
+    boolean removeAnimal(Animal animal){
+        int x=searchAnimal(animal);
+        if (x==-1)
+            return false;
+        else
+            for (int i = x; i <nbrAnimals ; i++) {
+                animals[i]=animals[i+1];
+                animals[nbrAnimals]=null;
+                this.nbrAnimals--;
+                System.out.println("success");
+            }
+            return true;
+    }
     @Override
     public String toString() {
         return "name : "+name+"\ncity : "+city+"\nnbr Cages: "+nbrCages;
