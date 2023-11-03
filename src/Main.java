@@ -18,6 +18,7 @@ public class Main {
         myZoo.city="tunis";
         myZoo.nbrCages=25;
         myZoo.animals=new Animal[25];
+        myZoo.displayZoo();
 
     }
 }
