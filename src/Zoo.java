@@ -12,4 +12,8 @@ public class Zoo {
     void displayZoo(){
         System.out.println("name : "+name+"\ncity : "+city+"\nnbr Cages: "+nbrCages);
     }
+    @Override
+    public String toString() {
+        return "name : "+name+"\ncity : "+city+"\nnbr Cages: "+nbrCages;
+    }
 }
