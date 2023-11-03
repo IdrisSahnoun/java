@@ -7,13 +7,13 @@ public class Main {
         int nbcages=sc.nextInt();
         zm.nbrCages=nbcages;
         System.out.println("le nbr de cages est :"+zm.nbrCages);
-        Animal lion=new Animal();
-        Zoo myZoo=new Zoo();
+        Animal lion=new Animal("slm","mohsen",2,true);
         lion.name="mohsen";
         lion.age=2;
         lion.family="slm";
         lion.isMammal=true;
         System.out.println(lion.age+lion.name+lion.family+lion.isMammal);
+        Zoo myZoo=new Zoo("belvedere","tunis",25);
         myZoo.name="belvedere";
         myZoo.city="tunis";
         myZoo.nbrCages=25;
