@@ -32,6 +32,12 @@ public class Zoo {
         }
         return x;
     }
+    void AfficherAnimaux(){
+        for (int i = 0; i <animals.length ; i++) {
+            System.out.println(animals[i]);
+        }
+
+    }
     @Override
     public String toString() {
         return "name : "+name+"\ncity : "+city+"\nnbr Cages: "+nbrCages;

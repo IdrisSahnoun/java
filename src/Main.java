@@ -8,6 +8,7 @@ public class Main {
         zm.nbrCages=nbcages;
         System.out.println("le nbr de cages est :"+zm.nbrCages);
         Animal lion=new Animal("slm","mohsen",2,true);
+        Animal cat=new Animal("slm","ohsen",2,true);
         lion.name="mohsen";
         lion.age=2;
         lion.family="slm";
@@ -16,15 +17,17 @@ public class Main {
         Zoo myZoo=new Zoo("belvedere","tunis",25);
         myZoo.name="belvedere";
         myZoo.city="tunis";
-        myZoo.nbrCages=25;
-        myZoo.animals=new Animal[25];
+        myZoo.animals=new Animal[nbcages];
         //myZoo.displayZoo();
         //System.out.println(myZoo);
         //System.out.println(myZoo.toString());
         //System.out.println(lion);
         //System.out.println(lion.toString());
        // Animal animal=new Animal();
-        System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(lion));
+        myZoo.addAnimal(lion);
+        myZoo.addAnimal(cat);
+        myZoo.AfficherAnimaux();
+        System.out.println(myZoo.searchAnimal(lion));
+        System.out.println(myZoo.searchAnimal(cat));
     }
 }
