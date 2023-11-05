@@ -14,7 +14,7 @@ public class Main {
         lion.family="slm";
         lion.isMammal=true;
         System.out.println(lion.age+lion.name+lion.family+lion.isMammal);
-        Zoo myZoo=new Zoo("belvedere","tunis",25);
+        Zoo myZoo=new Zoo("belvedere","tunis");
         myZoo.name="belvedere";
         myZoo.city="tunis";
         myZoo.animals=new Animal[nbcages];
