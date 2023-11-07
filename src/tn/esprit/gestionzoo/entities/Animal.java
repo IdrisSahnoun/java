@@ -6,6 +6,7 @@ public class Animal {
     private int age;
     private boolean isMammal;
 
+
     public Animal() {
     }
 

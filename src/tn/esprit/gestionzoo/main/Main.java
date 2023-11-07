@@ -28,5 +28,16 @@ public class Main {
         myZoo.addAnimal(lion);
         myZoo.AfficherAnimaux();
         System.out.println(myZoo.searchAnimal(lion));
+        Aquatic aquatic=new Aquatic("slm","slm",16,true,"salut");
+        Terrestrial terrestrial=new Terrestrial("hi","hi",12,false,3);
+        Dolphin dolphin=new Dolphin("salut","salut",2,false,"salut",2);
+        Penguin penguin=new Penguin("hola","hola",4,true,"hola",1);
+        System.out.println(aquatic.toString());
+        System.out.println(terrestrial.toString());
+        System.out.println(dolphin.toString());
+        System.out.println(penguin.toString());
+        aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
     }
 }

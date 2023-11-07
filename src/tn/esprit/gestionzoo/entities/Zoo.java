@@ -26,15 +26,12 @@ public class Zoo extends Animal {
         else
         this.name = name;
     }
-
     public String getCity() {
         return city;
     }
-
     public void setCity(String city) {
         this.city = city;
     }
-
     public int getNbrAnimals() {
         return nbrAnimals;
     }
