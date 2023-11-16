@@ -124,10 +124,32 @@ public class Zoo extends Animal {
      if (nbAquaticAnimals>10)
          System.out.println("tableau complet");
      else
-         for (int i = 0; i < getNbAquaticAnimals(); i++) {
-             aquaticAnimals[i]=aquatic;
-             System.out.println("the aquatic animals are : "+aquatic.getName());
-         }
+             aquaticAnimals[nbAquaticAnimals]=aquatic;
+        System.out.println("the aquatic animals are : "+aquatic.getName());
+        nbAquaticAnimals++;
+    }
+    public float maxPenguinSwimmingDepth(){
+        float maxdepth=0f;
+        for (int i = 0; i < nbAquaticAnimals; i++) {
+            if (aquaticAnimals[i] instanceof Penguin penguin) {
+                if (maxdepth < penguin.getSwimmingDepth())
+                    maxdepth=penguin.getSwimmingDepth();
+            }
+        }
+        return maxdepth;
+    }
+    public void displayNumberOfAquaticsByType(){
+        int nbrDauphins=0;
+        int nbrPenguins=0;
+        for (int i = 0; i < nbAquaticAnimals; i++) {
+            if (aquaticAnimals[i] instanceof Penguin)
+                    nbrPenguins++;
+            if (aquaticAnimals[i] instanceof Dolphin) {
+                nbrDauphins++;
+            }
+        }
+        System.out.println("nbr des penguins : "+nbrPenguins);
+        System.out.println("nbr des dauphins : "+nbrDauphins);
     }
     @Override
     public String toString() {
