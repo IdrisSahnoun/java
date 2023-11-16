@@ -6,6 +6,8 @@ public class Zoo extends Animal {
     private String city;
     private static final int nbrCages=25;
     private int nbrAnimals;
+    private int nbAquaticAnimals;
+    private Animal []aquaticAnimals=new Animal[10];
 
     public Animal[] getAnimals() {
         return animals;
@@ -38,6 +40,22 @@ public class Zoo extends Animal {
 
     public void setNbrAnimals(int nbrAnimals) {
         this.nbrAnimals = nbrAnimals;
+    }
+
+    public int getNbAquaticAnimals() {
+        return nbAquaticAnimals;
+    }
+
+    public void setNbAquaticAnimals(int nbAquaticAnimals) {
+        this.nbAquaticAnimals = nbAquaticAnimals;
+    }
+
+    public Animal[] getAquaticAnimals() {
+        return aquaticAnimals;
+    }
+
+    public void setAquaticAnimals(Animal[] aquaticAnimals) {
+        this.aquaticAnimals = aquaticAnimals;
     }
 
     public Zoo() {
@@ -101,6 +119,15 @@ public class Zoo extends Animal {
         return z1;
         else
             return z2;
+    }
+    public void addAquaticAnimal(Aquatic aquatic){
+     if (nbAquaticAnimals>10)
+         System.out.println("tableau complet");
+     else
+         for (int i = 0; i < getNbAquaticAnimals(); i++) {
+             aquaticAnimals[i]=aquatic;
+             System.out.println("the aquatic animals are : "+aquatic.getName());
+         }
     }
     @Override
     public String toString() {

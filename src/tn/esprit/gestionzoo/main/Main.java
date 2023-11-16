@@ -25,19 +25,24 @@ public class Main {
         System.out.println(lion);
         System.out.println(lion.toString());
         Animal animal=new Animal();*/
-        myZoo.addAnimal(lion);
-        myZoo.AfficherAnimaux();
-        System.out.println(myZoo.searchAnimal(lion));
-        Aquatic aquatic=new Aquatic("slm","slm",16,true,"salut");
+        //myZoo.addAnimal(lion);
+        //myZoo.AfficherAnimaux();
+        //System.out.println(myZoo.searchAnimal(lion));
         Terrestrial terrestrial=new Terrestrial("hi","hi",12,false,3);
         Dolphin dolphin=new Dolphin("salut","salut",2,false,"salut",2);
         Penguin penguin=new Penguin("hola","hola",4,true,"hola",1);
-        System.out.println(aquatic.toString());
+        //System.out.println(aquatic.toString());
         System.out.println(terrestrial.toString());
         System.out.println(dolphin.toString());
         System.out.println(penguin.toString());
-        aquatic.swim();
         dolphin.swim();
         penguin.swim();
+        System.out.println("donner le nbr des animaux aquatiques :\n");
+        int nbaquatics= sc.nextInt();
+        myZoo.setNbAquaticAnimals(nbaquatics);
+        myZoo.addAquaticAnimal(dolphin);
+        myZoo.addAquaticAnimal(penguin);
+        penguin.swim();
+        dolphin.swim();
     }
 }

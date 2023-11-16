@@ -6,6 +6,9 @@ public class Penguin extends Aquatic{
         super(family,name,age,isMammal,habitat);
         this.swimmingDepth=swimmingDepth;
     }
+    public void swim(){
+        System.out.println("this penguin is swimming");
+    }
     @Override
     public String toString() {
         return super.toString()+"swimming depth :"+swimmingDepth;
