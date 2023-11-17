@@ -10,10 +10,15 @@ public class Main {
         zm.nbrCages=nbcages;
         System.out.println("le nbr de cages est :"+zm.nbrCages);
         Animal lion=new Animal();
-        lion.setName("mohsen");
+        lion.setName("Lion");
         lion.setAge(2);
         lion.setFamily("slm");
         lion.setMammal(true);
+        Animal tiger=new Animal();
+        tiger.setName("Tiger");
+        tiger.setAge(4);
+        tiger.setFamily("slmmmm");
+        tiger.setMammal(true);
         System.out.println(lion.getAge()+lion.getName()+lion.getFamily());
         Zoo myZoo=new Zoo();
         myZoo.setName("belvedere");
@@ -23,15 +28,25 @@ public class Main {
         int nbaquatics= sc.nextInt();
         myZoo.setNbAquaticAnimals(nbaquatics);
         System.out.println("le nbr des animaux aquatiques est :"+nbaquatics);
-        /*myZoo.displayZoo();
-        System.out.println(myZoo);
-        System.out.println(myZoo.toString());
-        System.out.println(lion);
-        System.out.println(lion.toString());
-        Animal animal=new Animal();
-        myZoo.addAnimal(lion);
-        myZoo.AfficherAnimaux();
-        System.out.println(myZoo.searchAnimal(lion));
+        //myZoo.displayZoo();
+        //System.out.println(myZoo);
+        //System.out.println(myZoo.toString());
+        //System.out.println(lion);
+        //System.out.println(lion.toString());
+        try {
+            myZoo.addAnimal(lion);
+        }catch (ZooFullException z){
+            System.out.println("Error "+z.getMessage());
+        }
+        try {
+            myZoo.addAnimal(tiger);
+        }catch (ZooFullException z){
+            System.out.println("Error "+z.getMessage());
+        }
+
+        //myZoo.removeAnimal(lion);
+       /*    myZoo.AfficherAnimaux();
+     System.out.println(myZoo.searchAnimal(lion));
         System.out.println(aquatic.toString());
         System.out.println(terrestrial.toString());
         System.out.println(dolphin.toString());
