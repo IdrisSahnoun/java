@@ -4,7 +4,7 @@ public class Zoo extends Animal {
     private Animal [] animals;
     private String name;
     private String city;
-    private static final int nbrCages=1;
+    private static final int nbrCages=3;
     private int nbrAnimals;
     private int nbAquaticAnimals;
     private Animal []aquaticAnimals=new Animal[10];
@@ -64,9 +64,12 @@ public class Zoo extends Animal {
     void displayZoo(){
         System.out.println("name : "+name+"\ncity : "+city+"\nnbr Cages: "+nbrCages);
     }
-    public void addAnimal(Animal animal) throws ZooFullException{
+    public void addAnimal(Animal animal) throws ZooFullException,InvalidAgeException{
         if(searchAnimal(animal)!=-1){
             throw new ZooFullException("Animal nexiste pas");
+        }
+        if(animal.getAge() < 0){
+            throw new InvalidAgeException("Age ne peut pas etre negatif");
         }
         if(nbrAnimals==nbrCages){
             throw new ZooFullException("cant add the animal "+animal.getName()+" because the Zoo is full");
@@ -119,9 +122,9 @@ public class Zoo extends Animal {
      if (nbAquaticAnimals>10)
          System.out.println("tableau complet");
      else
-             aquaticAnimals[nbAquaticAnimals]=aquatic;
+     {aquaticAnimals[nbAquaticAnimals]=aquatic;
         System.out.println("the aquatic animals are : "+aquatic.getName());
-        nbAquaticAnimals++;
+        nbAquaticAnimals++;}
     }
     public float maxPenguinSwimmingDepth(){
         float maxdepth=0f;

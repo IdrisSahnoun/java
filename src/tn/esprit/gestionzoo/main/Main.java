@@ -11,7 +11,7 @@ public class Main {
         System.out.println("le nbr de cages est :"+zm.nbrCages);
         Animal lion=new Animal();
         lion.setName("Lion");
-        lion.setAge(2);
+        lion.setAge(-2);
         lion.setFamily("slm");
         lion.setMammal(true);
         Animal tiger=new Animal();
@@ -19,7 +19,7 @@ public class Main {
         tiger.setAge(4);
         tiger.setFamily("slmmmm");
         tiger.setMammal(true);
-        System.out.println(lion.getAge()+lion.getName()+lion.getFamily());
+        //System.out.println(lion.getAge()+lion.getName()+lion.getFamily());
         Zoo myZoo=new Zoo();
         myZoo.setName("belvedere");
         myZoo.setCity("tunis");
@@ -35,12 +35,12 @@ public class Main {
         //System.out.println(lion.toString());
         try {
             myZoo.addAnimal(lion);
-        }catch (ZooFullException z){
+        }catch (ZooFullException | InvalidAgeException z){
             System.out.println("Error "+z.getMessage());
         }
         try {
             myZoo.addAnimal(tiger);
-        }catch (ZooFullException z){
+        }catch (ZooFullException | InvalidAgeException z){
             System.out.println("Error "+z.getMessage());
         }
 
