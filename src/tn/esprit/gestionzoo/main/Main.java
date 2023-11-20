@@ -1,6 +1,7 @@
 package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.*;
 import java.util.Scanner;
+enum Food{MEAT,PLANT,BOTH}
 public class Main {
     public static void main(String[] args){
         ZooManagement zm= new ZooManagement();
@@ -11,7 +12,7 @@ public class Main {
         System.out.println("le nbr de cages est :"+zm.nbrCages);
         Animal lion=new Animal();
         lion.setName("Lion");
-        lion.setAge(-2);
+        lion.setAge(2);
         lion.setFamily("slm");
         lion.setMammal(true);
         Animal tiger=new Animal();
@@ -35,13 +36,16 @@ public class Main {
         //System.out.println(lion.toString());
         try {
             myZoo.addAnimal(lion);
-        }catch (ZooFullException | InvalidAgeException z){
+        } catch (Exception z){
             System.out.println("Error "+z.getMessage());
         }
         try {
             myZoo.addAnimal(tiger);
-        }catch (ZooFullException | InvalidAgeException z){
+        }catch (Exception z){
             System.out.println("Error "+z.getMessage());
+        }
+        finally {
+            System.out.println("passed");
         }
 
         //myZoo.removeAnimal(lion);
@@ -51,7 +55,6 @@ public class Main {
         System.out.println(terrestrial.toString());
         System.out.println(dolphin.toString());
         System.out.println(penguin.toString());*/
-        Terrestrial terrestrial=new Terrestrial("hi","hi",12,false,3);
         Dolphin dolphin=new Dolphin("d","salut",2,false,"salut",2);
         Penguin penguin=new Penguin("p","hola1",4,true,"hola",41.2f);
         Penguin penguin1=new Penguin("pp","hola2",4,true,"hola",51.3f);
@@ -66,5 +69,17 @@ public class Main {
         dolphin.swim();
         System.out.println(myZoo.maxPenguinSwimmingDepth());
         myZoo.displayNumberOfAquaticsByType();
+        Aquatic aquatic= new Aquatic("a1", "a2", 3, false, "salut") {
+            @Override
+            public void swim() {
+            }
+        };
+        Penguin penguin4=new Penguin("d3","dd",5,true,"hh",5.4f);
+        Terrestrial terrestrial=new Terrestrial("hi","hi",12,false,3);
+        aquatic.eatMeat(tn.esprit.gestionzoo.entities.Food.MEAT);
+        penguin4.eatMeat(tn.esprit.gestionzoo.entities.Food.MEAT);
+        terrestrial.eatMeat(tn.esprit.gestionzoo.entities.Food.MEAT);
+        terrestrial.eatPlant(tn.esprit.gestionzoo.entities.Food.MEAT);
+        terrestrial.eatPlantAndMeet(tn.esprit.gestionzoo.entities.Food.MEAT);
     }
 }
