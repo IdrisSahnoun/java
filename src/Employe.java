@@ -54,6 +54,14 @@ public class Employe {
         this.grade = grade;
     }
     @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + id;
+        result = 31 * result + nom.hashCode();
+        return result;
+    }
+
+    @Override
     public boolean equals(Object o){
         if (this == o) return true;
         if(!(o instanceof Employe employe)) return false;
